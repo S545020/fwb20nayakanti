@@ -10,12 +10,12 @@ block content
   else if rows > 6
    p rows value should be less than 6
   else if cols > 6
-   p cols value should be less than 6
+   p column value should be less than 6
   else
    table#outer
-    - for(let i=0; i<6; i++) {
+    - for(let i=0; i<rows; i++) {
      tr#middle
-      - for(let j=0; j<6; j++) {
-       td=i+j
+      - for(let j=0; j<cols; j++) {
+       td=((i+j)%rows)
       -}
     -}
